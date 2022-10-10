@@ -1,14 +1,14 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import Post from "../components/Post";
 import {sortByDate} from "../utils";
+import generateRSSFeed from "../utils/generateRSSFeed";
 
 export default function Home({posts}) {
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <title>Yuyan Li&apos;s blog</title>
 
@@ -23,6 +23,7 @@ export default function Home({posts}) {
 }
 
 export async function getStaticProps() {
+    await generateRSSFeed();
     const files = fs.readdirSync(path.join('posts'))
     const posts = files.map(filename => {
         const slug = filename.replace('.md', '')
@@ -34,7 +35,6 @@ export async function getStaticProps() {
             content
         }
     })
-    console.log(posts)
     return {
         props: {
             posts: posts.sort(sortByDate)

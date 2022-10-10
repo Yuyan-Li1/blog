@@ -1,26 +1,221 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Avenir Next', 'HelveticaNeue-Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+p {
+    margin: 15px 0;
+    line-height: 1.8;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    text-decoration: none;
+    color: #333;
 }
 
-* {
-  box-sizing: border-box;
+img {
+    width: 100%;
+    border-radius: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+header {
+    background: #4D5456;
+    color: #D3D4D4;
+    padding: 15px;
+    margin-bottom: 40px;
 }
+
+header a {
+    color: #D3D4D4;
+}
+
+.container {
+    max-width: 768px;
+    margin: auto;
+    overflow: auto;
+    padding: 0 10px;
+}
+
+.btn {
+    display: inline-block;
+    background: #C18265;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:hover {
+    transform: scale(0.98);
+}
+
+.btn-back {
+    background: #F0DFA7;
+    color: #000;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    /*grid-template-columns: repeat(2, 1fr);*/
+    /*gap: 30px;*/
+    /*margin-top: 30px;*/
+}
+
+.card {
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-page {
+    padding: 15px 30px;
+}
+
+.post-title {
+    margin: 10px 0;
+}
+
+.post-time {
+    background: rgba(196, 168, 144, 0.1);
+    margin-bottom: 20px;
+    padding: 3px 10px;
+}
+
+.post-body ul,
+ol {
+    font-size: 110%;
+    line-height: 2;
+    /*margin: 10px 0;*/
+    padding-left: 30px;
+}
+
+.post-body pre {
+    background: #f4f4f4;
+    padding: 20px;
+    margin: 20px 0;
+    line-height: 2.3;
+}
+
+nav {
+    padding-top: 7px;
+}
+
+nav > ul {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+
+
+/*blockquote {*/
+/*    background: #f9f9f9;*/
+/*    border-left: 10px solid #ccc;*/
+/*    margin: 1.5em 10px;*/
+/*    padding: 0.5em 10px;*/
+/*    quotes: "\201C" "\201D" "\2018" "\2019";*/
+/*}*/
+
+/*blockquote:before {*/
+/*    color: #ccc;*/
+/*    content: open-quote;*/
+/*    font-size: 4em;*/
+/*    line-height: 0.1em;*/
+/*    margin-right: 0.25em;*/
+/*    vertical-align: -0.4em;*/
+/*}*/
+
+/*blockquote p {*/
+/*    display: inline;*/
+/*}*/
+
+blockquote {
+    display: block;
+    background: #fff;
+    padding: 15px 20px 5px 45px;
+    margin: 0 0 20px;
+    position: relative;
+
+    line-height: 1.2;
+    color: #666;
+    text-align: justify;
+
+    /*Borders - (Optional)*/
+    border-left: 12px solid #64777F;
+    border-right: 2px solid #64777F;
+
+    /*Box Shadow - (Optional)*/
+    -moz-box-shadow: 2px 2px 15px #ccc;
+    -webkit-box-shadow: 2px 2px 15px #ccc;
+    box-shadow: 2px 2px 15px #ccc;
+}
+
+blockquote::before {
+    content: "\201C"; /*Unicode for Left Double Quote*/
+
+    /*Font*/
+    font-family: Georgia, serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: #999;
+
+    /*Positioning*/
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+blockquote::after {
+    /*Reset to make sure*/
+    content: "";
+}
+
+blockquote a {
+    text-decoration: none;
+    background: #eee;
+    cursor: pointer;
+    padding: 0 3px;
+    color: #c76c0c;
+}
+
+blockquote a:hover {
+    color: #666;
+}
+
+blockquote em {
+    font-style: italic;
+}
+
+hr {
+    border: 1px solid rgba(78, 84, 86, 0.3);
+    border-radius: 2px;
+    margin: 10px;
+}
+
+.site-name {
+    font-weight: normal;
+}
+
+@media (max-width: 500px) {
+    .posts {
+        grid-template-columns: 1fr;
+    }
+}
+

@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import matter from "gray-matter";
-import Link from "next/link";
 import {marked} from "marked";
 import {useEffect, useState} from "react";
 
@@ -17,9 +16,9 @@ export default function PostPage({
 
     return (
         <div>
-            <Link href='/'>
-                <a className='btn btn-back'>Go Back</a>
-            </Link>
+            {/*<Link href='/'>*/}
+            {/*    <a className='btn btn-back'>Go Back</a>*/}
+            {/*</Link>*/}
             <h1 className='post-title'>{title}</h1>
             <div className='post-time'>Posted at {time}</div>
             <div className='post-body'>

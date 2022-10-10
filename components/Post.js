@@ -8,10 +8,10 @@ export default function Post({post}) {
         setTime(new Date(post.frontmatter.date).toLocaleTimeString() + ", " + new Date(post.frontmatter.date).toLocaleDateString())
     }, [post.frontmatter.date])
     return (
-        <div class='card'>
+        <div className='card'>
             <Link href={`/blog/${post.slug}`}>
                 <a>
-                    <h2>{post.frontmatter.title}</h2>
+                    <h2 className='post-title'>{post.frontmatter.title}</h2>
                 </a>
             </Link>
             <div className='post-time'>
