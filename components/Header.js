@@ -15,7 +15,7 @@ export default function Header() {
                         <Link href="/about"><a>
                             <li>About</li>
                         </a></Link>
-                        <Link href="/feed.xml"><a>
+                        <Link href="/rss.xml"><a>
                             <li>RSS</li>
                         </a></Link>
                     </ul>
