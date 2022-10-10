@@ -7,7 +7,7 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "node ./utils/generateRss.js"
+    "postbuild": "node ./utils/generateRSS.js"
   },
   "dependencies": {
     "feed": "^4.2.2",
