@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "generate:rss": "node rss.mjs",
-    "prebuild": "npm run generate:rss",
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "node ./utils/generateRss.js"
   },
   "dependencies": {
     "feed": "^4.2.2",
