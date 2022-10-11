@@ -70,6 +70,7 @@ header a {
 .posts {
     display: flex;
     flex-direction: column;
+    gap: 30px;
 }
 
 .card {
