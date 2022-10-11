@@ -7,7 +7,6 @@ export default function Post({post}) {
     useEffect(() => {
         setTime(new Date(post.frontmatter.date).toLocaleTimeString() + ", " + new Date(post.frontmatter.date).toLocaleDateString())
     }, [post.frontmatter.date])
-    console.log('link' in post.frontmatter)
     if ('link' in post.frontmatter) {
         return (
             <div className='card'>
