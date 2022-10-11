@@ -12,12 +12,22 @@ const getAllPosts = () => {
         const slug = filename.replace('.md', '')
         const markdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
         const {data: frontmatter, content} = matter(markdownWithMeta)
-        return {
-            title: frontmatter.title,
-            date: frontmatter.date,
-            content: marked(content),
-            link: 'https://blog.yuyanli.dev/' + slug,
-        };
+        if ('link' in frontmatter) {
+            return {
+                title: frontmatter.title,
+                date: frontmatter.date,
+                content: marked(content),
+                link: frontmatter.link
+            }
+        } else {
+            return {
+                title: frontmatter.title,
+                date: frontmatter.date,
+                content: marked(content),
+                link: 'https://blog.yuyanli.dev/' + slug,
+            }
+        }
+        ;
     });
     // Sort the blogposts by date
     return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
